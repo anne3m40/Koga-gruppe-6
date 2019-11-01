@@ -40,6 +40,64 @@
         </nav>
     </header>
 
+    <section id="modeller">
+
+        <h1>Cykler</h1>
+        <p></p>
+
+        <nav>
+            <!-- data-model er en data attribut som vi har givet navnet model -->
+            <button class="filter valgt" data-model="alle">Alle</button>
+            <button class="filter" data-model="by">By cykler</button>
+            <button class="filter" data-model="trekking">Trekking cykler</button>
+            <button class="filter" data-model="racer">Rasercykler</button>
+            <button class="filter" data-model="el">El-cykler</button>
+        </nav>
+
+
+        <section id="liste"></section>
+
+        <template>
+            <article class="cykler">
+                <img src="" alt="billede af person">
+                <h2></h2>
+                <p class="navn"></p>
+                <p class="vægt"></p>
+                <p class="pris"></p>
+            </article>
+        </template>
+
+    </section>
+
+    <section id="signatur">
+
+        <h1></h1>
+
+        <div class="left">
+            <p></p>
+            <a href="">https://www.koga.com/en/koga-signature</a>
+        </div>
+
+        <div class="right">
+            <img>
+        </div>
+
+    </section>
+
+    <footer>
+
+        <div class="kontakt"></div>
+        <div class="adresse"></div>
+        <div class="aabningstider"></div>
+
+        <div class="some">
+            <div class="facebook"></div>
+            <div class="youtube"></div>
+            <div class="twitter"></div>
+            <div class="mail"></div>
+        </div>
+
+    </footer>
 
     <script src="script.js"></script>
 </body>
