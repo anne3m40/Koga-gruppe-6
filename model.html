@@ -17,6 +17,9 @@
         #kategorier {
             grid-area: kate;
             background-color: red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         p {
@@ -42,6 +45,7 @@
         footer {
             grid-area: footer;
             background-color: pink;
+            padding: 20px;
         }
 
         #modeller {
@@ -55,6 +59,7 @@
         .indhold {
             background-color: skyblue;
             grid-area: indhold;
+            padding: 20px;
         }
 
         #modeller h1 {
@@ -69,26 +74,36 @@
         #container {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr;
-            grid-template-rows: 20vw 20vw 20vw;
             grid-template-areas:
                 "menu menu menu menu"
                 "splash splash splash splash"
                 "kate kate kate kate"
                 "indhold indhold indhold indhold"
                 "footer footer footer footer"
-
         }
 
         /*        menu*/
 
         #menu {
+            display: flex;
             grid-area: menu;
             background-color: green;
+            justify-content: center;
         }
 
-        .dropdown_menu {}
+        .dropdown_menu {
+            display: flex;
+        }
 
         #menu_bar {}
+
+        #kate {
+            display: flex;
+        }
+
+        button {
+            font-size: 1rem;
+        }
     </style>
 </head>
 
@@ -119,7 +134,7 @@
             <h1>SPLASH</h1>
         </div>
         <div id="kategorier">
-            <h1>Cykler</h1>
+            <h1></h1>
             <nav class="kate">
                 <!-- data-model er en data attribut som vi har givet navnet model -->
                 <button class="filtervalgt" data-model="alle">Alle</button>
@@ -130,6 +145,7 @@
             </nav>
         </div>
         <div class="indhold">
+            <h2>Cykler</h2>
             <template>
                 <article class="model">
                     <h2></h2>
