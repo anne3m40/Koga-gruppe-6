@@ -14,21 +14,24 @@
             height: 100%;
         }
 
-        nav {
-            text-align: center;
-            margin-top: -3vh;
+        #kategorier {
+            grid-area: kate;
+            background-color: red;
         }
 
         p {
-            font-size: 1.5rem;
+            font-size: 1rem;
         }
+
+        a {}
 
         img {
             width: 100%;
         }
 
+
         .splash_video {
-            display: flex;
+            grid-area: splash;
             background-color: aquamarine;
             width: 100%;
             max-width: none;
@@ -37,103 +40,127 @@
         }
 
         footer {
+            grid-area: footer;
             background-color: pink;
         }
 
         #modeller {
+            width: 80vw;
+            margin: 2vw auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-gap: 1em;
+        }
+
+        .indhold {
             background-color: skyblue;
-            padding: 20px;
+            grid-area: indhold;
         }
 
         #modeller h1 {
             text-decoration: underline;
         }
 
-        .modeller {
+        .model {
             border-style: solid;
             background-color: white;
         }
 
+        #container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 20vw 20vw 20vw;
+            grid-template-areas:
+                "menu menu menu menu"
+                "splash splash splash splash"
+                "kate kate kate kate"
+                "indhold indhold indhold indhold"
+                "footer footer footer footer"
+
+        }
+
         /*        menu*/
 
-        .dropdown_menu {
-            padding: 20px;
+        #menu {
+            grid-area: menu;
             background-color: green;
         }
+
+        .dropdown_menu {}
+
+        #menu_bar {}
     </style>
 </head>
 
-<header>
-    <div class="splash_video">
-        <p>HEADER</p>
-    </div>
-</header>
-
-<nav>
-    <div class=menu_bar>
-        <a href="index.html"><img></a>
-
-        <!-- Koden til menu dropdown er fundet her: https://stackoverflow.com/questions/30624709/css-html-navigation-and-logo-on-same-line-->
-        <div class="dropdown_menu">
-            <button class="om_os_knap">Om os</button>
-            <div class="om_os_content">
-                <a href="min_koga_oplevelse.html">Min Koga oplevelse</a>
-                <a href="service.html">Service</a>
-            </div>
-
-            <button class="cykler_knap">Cykler</button>
-            <div class="cykler_content">
-                <a href="cykler.html#modeller">Alle modeller</a>
-                <a href="cykler.html#signatur">Signaturcykler</a>
-            </div>
-            <button class="kontakt_knap">Kontakt</button>
-        </div>
-    </div>
-</nav>
-
 <body>
-    <section id="modeller">
-        <h1>Cykler</h1>
-        <p></p>
-        <nav>
-            <!-- data-model er en data attribut som vi har givet navnet model -->
-            <button class="filter valgt" data-model="alle">Alle</button>
-            <button class="filter" data-model="by">By cykler</button>
-            <button class="filter" data-model="trekking">Trekking cykler</button>
-            <button class="filter" data-model="racer">Rasercykler</button>
-            <button class="filter" data-model="el">El-cykler</button>
+    <section id="container">
+        <nav id="menu">
+            <div id=menu_bar>
+                <a href="index.html"><img></a>
+
+                <!-- Koden til menu dropdown er fundet her: https://stackoverflow.com/questions/30624709/css-html-navigation-and-logo-on-same-line-->
+                <div class="dropdown_menu">
+                    <button class="om_os_knap">Om os</button>
+                    <div class="om_os_content">
+                        <a href="min_koga_oplevelse.html">Min Koga oplevelse</a>
+                        <a href="service.html">Service</a>
+                    </div>
+
+                    <button class="cykler_knap">Cykler</button>
+                    <div class="cykler_content">
+                        <a href="cykler.html#modeller">Alle modeller</a>
+                        <a href="cykler.html#signatur">Signaturcykler</a>
+                    </div>
+                    <button class="kontakt_knap">Kontakt</button>
+                </div>
+            </div>
         </nav>
+        <div class="splash_video">
+            <h1>SPLASH</h1>
+        </div>
+        <div id="kategorier">
+            <h1>Cykler</h1>
+            <nav class="kate">
+                <!-- data-model er en data attribut som vi har givet navnet model -->
+                <button class="filtervalgt" data-model="alle">Alle</button>
+                <button class="filter" data-model="by">By cykler</button>
+                <button class="filter" data-model="trekking">Trekking cykler</button>
+                <button class="filter" data-model="racer">Rasercykler</button>
+                <button class="filter" data-model="el">El-cykler</button>
+            </nav>
+        </div>
+        <div class="indhold">
+            <template>
+                <article class="model">
+                    <h2></h2>
+                    <p class="pris"></p>
+                    <p class="kategori"></p>
+                    <figure>
+                        <img class="cykel" src="" alt="">
+                    </figure>
+                </article>
+            </template>
 
-        <template>
-            <article>
-                <h2></h2>
-                <p></p>
-                <p class="pris"></p>
-                <p class="kategori"></p>
-                <figure>
-                    <img class="cykel" src="" alt="">
-                </figure>
-            </article>
-        </template>
+            <main>
+                <section id="modeller"></section>
+            </main>
+        </div>
 
-        <main>
-            <section class="modeller"></section>
-        </main>
+        <footer>
+            <div class="kontakt">kontakt</div>
+            <div class="adresse">adresse</div>
+            <div class="aabningstider">åbningstider</div>
+            <div class="some">
+                <div class="facebook">facebook</div>
+                <div class="youtube">youtube</div>
+                <div class="twitter">twitter</div>
+                <div class="mail">mail</div>
+            </div>
+        </footer>
+
     </section>
 
-    <footer>
-        <div class="kontakt">kontakt</div>
-        <div class="adresse">adresse</div>
-        <div class="aabningstider">åbningstider</div>
-        <div class="some">
-            <div class="facebook">facebook</div>
-            <div class="youtube">youtube</div>
-            <div class="twitter">twitter</div>
-            <div class="mail">mail</div>
-        </div>
-
-    </footer>
-
+    <!--    script -->
     <script>
         let indhold;
         document.addEventListener("DOMContentLoaded", hentJson);
@@ -158,7 +185,7 @@
                 klon.querySelector(".pris").innerHTML = enkelt.pris;
                 klon.querySelector(".kategori").innerHTML = enkelt.kategori;
                 klon.querySelector(".cykel").src = enkelt.foto_cykel.guid;
-                document.querySelector(".modeller").appendChild(klon);
+                document.querySelector("#modeller").appendChild(klon);
             })
 
             //            document.querySelector(".overskrift").innerHTML = indhold.title.rendered;
