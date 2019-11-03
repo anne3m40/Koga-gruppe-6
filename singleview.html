@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koga_cykler</title>
+    <link rel="stylesheet" href="">
+
+    <style>
+        p {
+            font-size: 1.5rem;
+        }
+
+        img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <template>
+        <article>
+            <h2></h2>
+            <p></p>
+            <p class="pris"></p>
+            <p class="kategori"></p>
+            <p class="sex"></p>
+            <p class="beskrivelse"></p>
+            <p class="farve"></p>
+            <figure>
+                <img class="cykel" src="" alt="">
+            </figure>
+            <figure>
+                <img class="cykelml" src="" alt="">
+            </figure>
+            <figure>
+                <img class="feature1" src="" alt="">
+            </figure>
+        </article>
+    </template>
+
+    <main>
+        <section></section>
+    </main>
+    <script>
+        let indhold;
+        document.addEventListener("DOMContentLoaded", hentJson);
+        //hent JSON fil i asynkron function
+        async function hentJson() {
+            const url = "http://annesofienielsen.dk/kea/09-cms/koga/wordpress/wp-json/wp/v2/cykel";
+
+
+            //henter data filen
+            const myJson = await fetch(url);
+            //den hentee ata skal tolkes som json
+            indhold = await myJson.json();
+            //kald funktion der viser data som json
+            visIndhold();
+        }
+
+        function visIndhold() {
+
+            indhold.forEach(enkelt => {
+                const klon = document.querySelector("template").cloneNode(true).content;
+                klon.querySelector("h2").textContent = enkelt.model;
+                klon.querySelector(".pris").innerHTML = enkelt.pris;
+                klon.querySelector(".kategori").innerHTML = enkelt.kategori;
+                klon.querySelector(".sex").innerHTML = enkelt.herre_dame_unisex;
+                klon.querySelector(".beskrivelse").innerHTML = enkelt.beskrivelse;
+                klon.querySelector(".farve").innerHTML = enkelt.farve;
+                klon.querySelector(".cykel").src = enkelt.foto_cykel.guid;
+                klon.querySelector(".cykelml").src = enkelt.foto_cykel_ml.guid;
+                klon.querySelector(".feature1").src = enkelt.feature1.guid;
+                document.querySelector("section").appendChild(klon);
+            })
+
+            //            document.querySelector(".overskrift").innerHTML = indhold.title.rendered;
+            //            document.querySelector(".indhold").innerHTML = indhold.content.rendered;
+        }
+    </script>
+</body></html>
+

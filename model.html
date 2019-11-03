@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kogacenter Copenhagen - cykler</title>
+    <link rel="stylesheet" href="">
+
+    <style>
+        body,
+        html {
+            margin: 0;
+            height: 100%;
+        }
+
+        nav {
+            text-align: center;
+            margin-top: -3vh;
+        }
+
+        p {
+            font-size: 1.5rem;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .splash_video {
+            display: flex;
+            background-color: aquamarine;
+            width: 100%;
+            max-width: none;
+            background-size: cover;
+            text-align: center;
+        }
+
+        footer {
+            background-color: pink;
+        }
+
+        #modeller {
+            background-color: skyblue;
+            padding: 20px;
+        }
+
+        #modeller h1 {
+            text-decoration: underline;
+        }
+
+        .modeller {
+            border-style: solid;
+            background-color: white;
+        }
+
+        /*        menu*/
+
+        .dropdown_menu {
+            padding: 20px;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<header>
+    <div class="splash_video">
+        <p>HEADER</p>
+    </div>
+</header>
+
+<nav>
+    <div class=menu_bar>
+        <a href="index.html"><img></a>
+
+        <!-- Koden til menu dropdown er fundet her: https://stackoverflow.com/questions/30624709/css-html-navigation-and-logo-on-same-line-->
+        <div class="dropdown_menu">
+            <button class="om_os_knap">Om os</button>
+            <div class="om_os_content">
+                <a href="min_koga_oplevelse.html">Min Koga oplevelse</a>
+                <a href="service.html">Service</a>
+            </div>
+
+            <button class="cykler_knap">Cykler</button>
+            <div class="cykler_content">
+                <a href="cykler.html#modeller">Alle modeller</a>
+                <a href="cykler.html#signatur">Signaturcykler</a>
+            </div>
+            <button class="kontakt_knap">Kontakt</button>
+        </div>
+    </div>
+</nav>
+
+<body>
+    <section id="modeller">
+        <h1>Cykler</h1>
+        <p></p>
+        <nav>
+            <!-- data-model er en data attribut som vi har givet navnet model -->
+            <button class="filter valgt" data-model="alle">Alle</button>
+            <button class="filter" data-model="by">By cykler</button>
+            <button class="filter" data-model="trekking">Trekking cykler</button>
+            <button class="filter" data-model="racer">Rasercykler</button>
+            <button class="filter" data-model="el">El-cykler</button>
+        </nav>
+
+        <template>
+            <article>
+                <h2></h2>
+                <p></p>
+                <p class="pris"></p>
+                <p class="kategori"></p>
+                <figure>
+                    <img class="cykel" src="" alt="">
+                </figure>
+            </article>
+        </template>
+
+        <main>
+            <section class="modeller"></section>
+        </main>
+    </section>
+
+    <footer>
+        <div class="kontakt">kontakt</div>
+        <div class="adresse">adresse</div>
+        <div class="aabningstider">åbningstider</div>
+        <div class="some">
+            <div class="facebook">facebook</div>
+            <div class="youtube">youtube</div>
+            <div class="twitter">twitter</div>
+            <div class="mail">mail</div>
+        </div>
+
+    </footer>
+
+    <script>
+        let indhold;
+        document.addEventListener("DOMContentLoaded", hentJson);
+        //hent JSON fil i asynkron function
+        async function hentJson() {
+            const url = "http://annesofienielsen.dk/kea/09-cms/koga/wordpress/wp-json/wp/v2/cykel";
+
+
+            //henter data filen
+            const myJson = await fetch(url);
+            //den hentee ata skal tolkes som json
+            indhold = await myJson.json();
+            //kald funktion der viser data som json
+            visIndhold();
+        }
+
+        function visIndhold() {
+
+            indhold.forEach(enkelt => {
+                const klon = document.querySelector("template").cloneNode(true).content;
+                klon.querySelector("h2").textContent = enkelt.model;
+                klon.querySelector(".pris").innerHTML = enkelt.pris;
+                klon.querySelector(".kategori").innerHTML = enkelt.kategori;
+                klon.querySelector(".cykel").src = enkelt.foto_cykel.guid;
+                document.querySelector(".modeller").appendChild(klon);
+            })
+
+            //            document.querySelector(".overskrift").innerHTML = indhold.title.rendered;
+            //            document.querySelector(".indhold").innerHTML = indhold.content.rendered;
+        }
+    </script>
+</body></html>
