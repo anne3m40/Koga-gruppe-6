@@ -139,9 +139,9 @@
                 </div>
             </div>
         </nav>
-        <div class="splash_video">
+        <header class="splash_video">
             <h1>SPLASH</h1>
-        </div>
+        </header>
         <div id="kategorier">
             <h1></h1>
             <nav class="kate">
@@ -191,8 +191,7 @@
         document.addEventListener("DOMContentLoaded", hentJson);
         //hent JSON fil i asynkron function
         async function hentJson() {
-            const url = "http://annesofienielsen.dk/kea/09-cms/koga/wordpress/wp-json/wp/v2/cykel";
-
+            const url = "http://annesofienielsen.dk/kea/09-cms/koga/wordpress/wp-json/wp/v2/cykel/?per_page=100";
 
             //henter data filen
             const myJson = await fetch(url);
