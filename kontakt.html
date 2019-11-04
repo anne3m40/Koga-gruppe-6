@@ -6,6 +6,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kogacenter Copenhagen - kontakt</title>
     <link rel="stylesheet" href="style.css">
+
+
+    <style>
+        /*STYLING AF DROP DOWN MENU*/
+
+        /*styling af menu bar*/
+        .dropdown_wrapper {
+            background-color: darkblue;
+            margin: 0px;
+        }
+
+        /*---- knapperne på menuen----*/
+        .dropdown_knap {
+            background-color: darkblue;
+            color: white;
+            padding: 10px;
+            font-size: 0.8rem;
+            border: none;
+        }
+
+        /* The container <div> - needed to position the dropdown content */
+
+        .dropdown wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Dropdown Content (Hidden by Default) */
+        .dropdown_content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        /* Links inside the dropdown */
+        .dropdown_content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown_knap a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Change color of dropdown links on hover */
+        .dropdown_content a:hover {
+            background-color: #ddd;
+        }
+
+        /* Show the dropdown menu on hover */
+        .dropdown_om-os:hover .dropdown_content,
+        .dropdown_cykler:hover .dropdown_content {
+            display: block;
+        }
+
+        /* Change the background color of the dropdown button when the dropdown content is shown */
+        .dropdown_om-os:hover .dropdown_knap:hover,
+        .dropdown_cykler .dropdown_knap:hover,
+        .dropdown_kontakt .dropdown_knap:hover {
+            background-color: red;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -14,30 +83,49 @@
     <header>
         <div class="splash_video"></div>
         <nav>
+
+            <!--- menubar ---->
             <div .menu_bar>
 
+                <!--- logo i menubare--->
                 <a href="index.html"><img></a>
 
                 <!-- DROP DOWN MENU -->
-                <div class="dropdown_menu">
+                <div class="dropdown_wrapper">
+                    <!--- Om os knap og dropdown --->
+                    <div class="dropdown_om-os">
 
-                    <button class="om_os_knap">Om os</button>
-                    <div class="om_os_content">
-                        <a href="min_koga_oplevelse.html">Min Koga oplevelse</a>
-                        <a href="service.html">Service</a>
+                        <button class="dropdown_knap">Om os</button>
+                        <div class="dropdown_content">
+                            <a href="min_koga_oplevelse.html">Min Koga oplevelse</a>
+                            <a href="service.html">Service</a>
+                        </div>
+
                     </div>
 
-                    <button class="cykler_knap">Cykler</button>
-                    <div class="cykler_content">
-                        <a href="cykler.html#modeller">Alle modeller</a>
-                        <a href="cykler.html#signatur">Signaturcykler</a>
-                    </div>
+                    <!--- Om os knap og dropdown slut --->
 
-                    <button class="kontakt_knap">Kontakt</button>
+                    <!--- Cykler knap og drop down --->
+                    <div class="dropdown_cykler">
+
+                        <button class="dropdown_knap">Cykler</button>
+                        <div class="dropdown_content">
+                            <a href="cykler.html#modeller">Alle modeller</a>
+                            <a href="cykler.html#signatur">Signaturcykler</a>
+                        </div>
+                    </div>
+                    <!--- Cykler knap og drop down slut --->
+                    <div class="dropdown_kontakt">
+
+                        <button class="dropdown_knap"><a href="kontakt.html">Kontakt</a></button>
+
+                    </div>
 
                 </div>
-
+                <!--- dropdown menu slut--->
             </div>
+            <!--- menubar slut ---->
+
         </nav>
     </header>
     <!---------------------- HEADER SLUT -------------------------->
@@ -121,6 +209,4 @@
 
 
     <script src="script.js"></script>
-</body>
-
-</html>
+</body></html>
