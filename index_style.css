@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+}
+
+.splash {
+    width: 100vw;
+    grid-area: splash;
+    overflow: hidden;
+    height: 95vh;
+}
+
+#menu {
+    grid-area: header;
+    display: flex;
+    flex-direction: row;
+}
+
+.container {
+    display: grid;
+    grid-template-areas:
+        "splash"
+        "header"
+        "main"
+        "footer";
+}
