@@ -6,47 +6,186 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kogacenter Copenhagen</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        img {
+            width: 100%;
+        }
+
+        #container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-areas:
+                "splash splash splash splash"
+                "mko mko mko mko"
+                "footer footer footer footer"
+        }
+
+        .kogafoto {
+            width: 80vw;
+            margin: 1vw auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            grid-gap: 2em;
+        }
+
+        .splash {
+            grid-area: splash;
+        }
+
+        #koga_oplevelse {
+            grid-area: mko;
+        }
+
+        footer {
+            grid-area: footer;
+        }
+
+        /*        foto1*/
+
+        .koga1 {
+            position: relative;
+            text-align: center;
+        }
+
+        .koga1 p {
+            color: white;
+            font-size: 1.3rem;
+        }
+
+        .koga1text {
+            position: absolute;
+            top: 10px;
+        }
+
+        /*        foto2*/
+
+        .koga2 {
+            position: relative;
+            text-align: center;
+        }
+
+        .koga2 p {
+            color: white;
+            font-size: 1.3rem;
+        }
+
+        .koga2text {
+            position: absolute;
+            top: 10px;
+        }
+
+        /*        foto3*/
+
+        .koga3 {
+            position: relative;
+            text-align: center;
+        }
+
+        .koga3 p {
+            color: white;
+            font-size: 1.3rem;
+        }
+
+        .koga3text {
+            position: absolute;
+            top: 10px;
+        }
+
+        /*        foto4*/
+
+        .koga4 {
+            position: relative;
+            text-align: center;
+        }
+
+        .koga4 p {
+            color: white;
+            font-size: 1.3rem;
+        }
+
+        .koga4text {
+            position: absolute;
+            bottom: 10px;
+        }
+    </style>
 </head>
 
 <body>
+    <div id="container">
+        <div class="splash">
+            <!-------------------------- HEADER -------------------------->
+            <header>
+                <div class="splash_video"></div>
+                <nav></nav>
+            </header>
+        </div>
 
+        <!------------------------ HEADER SLUT ------------------------>
 
-    <!-------------------------- HEADER -------------------------->
+        <!---------------- SEKTION: MIN KOGA OPLEVELSE ---------------->
+        <section id="koga_oplevelse">
 
+            <h1>Min Koga Oplevelse</h1>
+            <h2>#MYKOGAANDI</h2>
+            <p>Her kan du se et lille uddrag af historier, der er blevet delt med #MYKOGAANDI Hvis du deler din KOGA-historie på instagram, vises din historie på Koga.com hvor andre kan tage del af din historie.
+            </p>
 
-    <header>
-        <div class="splash_video"></div>
-        <nav></nav>
-    </header>
+            <div class="kogafoto">
+                <article class="koga1">
+                    <img src="img/minkoga11.jpg">
+                    <div class="koga1text">
+                        <p>Hvordan kan DU komme til et sted som dette? Se efter de små stiplede linjer på et kort. Kontroller konturerne for at se, om gradienten ikke er for meget over 10%. Brug satellitbilleder af området til at måle terrænet. Vær forberedt på at brænde et par timer mere af end forventet. God fornøjelse! @cyclingabout
 
-    <!------------------------ HEADER SLUT ------------------------>
+                            #MYKOGAANDI
+                        </p>
+                    </div>
+                </article>
+                <article class="koga2">
+                    <img src="img/minkoga21.jpg">
+                    <div class="koga2text">
+                        <p>Temmelig fedt at se så mange gigantiske vindmøller, der holder Nicaragua kølig!
+                            Vindkraft udgør i øjeblikket 25% af elproduktionen her, men det er ikke af miljømæssige årsager. Nicaragua, det næstfattigste land i den vestlige halvkugle, har investeret stærkt i vindprojekter, så de kan være mere uafhængige af olieprisen. Når oliepriserne er steget, har landet simpelthen ikke råd til selv at bruge olie, hvilket resulterer i lange blackouts. Så at investere i vedvarende energi er som forsikring mod olieprisen. @cyclingabout
 
-    <!---------------- SEKTION: MIN KOGA OPLEVELSE ---------------->
+                            #MYKOGAANDI
+                        </p>
+                    </div>
+                </article>
 
-    <section id="koga_oplevelse">
+                <article class="koga3">
+                    <img src="img/minkoga31.jpg">
+                    <div class="koga3text">
+                        <p>Jeg tog til Costa Rica med lave forventninger. Folk fortalte mig, ”vejene er travle, og lastbilerne passerer for tæt”. De sagde, “San Jose er en frygtelig by”. Jeg læste et sted, at kysten var “frygtelig bølgepap og støvet”. Alligevel kunne min oplevelse ikke have været mere anderledes. Jeg havde nul problemer med lastbiler, bjergveje var glatte og tomme, San Jose var ligesom andre byer i regionen, og Nicoya-kysten var en sjov rute med fantastiske forhold. Det viser bare, at det er værd at opleve steder på egen hånd, før du dømmer det!
+                            I morgen tager jeg ind i bjergene fra endnu en sti, og så krydser jeg grænsen til Nicaragua. Tak for at du følger denne meget lange rejse - Vi ses snart i et nyt land! @cyclingabout
 
-        <h1>Min Koga Oplevelse</h1>
+                            #MYKOGAAND
+                        </p>
+                    </div>
+                </article>
 
-        <template>
-            <img>
-            <h2></h2>
-            <p></p>
-        </template>
+                <article class="koga4">
+                    <img src="img/minkoga41.jpg">
+                    <div class="koga4text">
+                        <p>Med mindre end 12 måneder til at jeg er færdig i Alaska, var jeg nødt til at kontrollere at jeg bevæger mig i et tempo, der matcher årstiderne og terrænet. Det ser ud til, at der er ca. 17.000 km eller 11.000 mil at gå. I betragtning af min tilbøjelighed til at udforske den ferske vej, plus behovet for et nyt pas og specielt amerikansk visum (jeg har været i Iran, så det er en lang proces) - Jeg bliver nødt til at skubbe lidt hårdere på og vælge fladere ruter fra nu af. Jeg har også brug for lidt mere sikkerhed undervejs, da dage med vandretur-og cykelstier vil brænde i for lang tid. Her kommer jeg Alaska! @cyclingabout
 
+                            #MYKOGAAND
 
-    </section>
+                        </p>
+                    </div>
+                </article>
 
-    <!------------- SEKTION: MIN KOGA OPLEVELSE SLUT ------------->
+            </div>
 
-    <!----------------------- FOOTER ----------------------------->
+        </section>
 
-    <footer></footer>
+        <!------------- SEKTION: MIN KOGA OPLEVELSE SLUT ------------->
 
+        <!----------------------- FOOTER ----------------------------->
+
+        <footer>footer</footer>
+    </div>
     <!---------------------- FOOTER SLUT ------------------------>
 
 
 
     <script src="script.js"></script>
-</body>
-
-</html>
+</body></html>
