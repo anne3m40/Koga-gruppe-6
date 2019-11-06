@@ -77,7 +77,7 @@
  .dropdown_om-os:hover .dropdown_knap:hover,
  .dropdown_cykler .dropdown_knap:hover,
  .dropdown_kontakt .dropdown_knap:hover {
-     background-color: red;
+     background-color: #B11611;
      cursor: pointer;
  }
 
