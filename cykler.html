@@ -29,7 +29,6 @@
                 font-family: 'Montserrat', sans-serif;
             }
 
-            main #modeller {}
 
             .model {
                 width: 80vw;
@@ -65,11 +64,6 @@
 
             html p {
                 font-size: 0.8em;
-            }
-
-            html header h1 {
-                font-size: 1.5em;
-                font-family: 'Montserrat', sans-serif;
             }
 
             #signatur img {
@@ -433,6 +427,26 @@
                 display: flex;
                 flex-direction: column;
             }
+
+            .cykel_text {
+                top: 2.5vw;
+            }
+        }
+
+        .cykel_text {
+            position: absolute;
+            bottom: 80px;
+            left: 50px;
+        }
+
+        .splash_billede {
+            position: relative;
+            height: 40vw;
+            width: 100vw;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-image: url(img/cykler_splash.png);
+            color: white;
         }
 
         /*NYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYT SLUT*/
@@ -446,7 +460,10 @@
 
         <header class="splash_billede">
             <div id="menuknap">☰</div>
-            <h1 class="cykler">Cykler</h1>
+            <div class="cykel_text">
+                <h1>Cykler</h1>
+            </div>
+
         </header>
 
         <div id="burger" class="hidden">
@@ -612,6 +629,3 @@
 
 
 </body></html>
-
-
-
