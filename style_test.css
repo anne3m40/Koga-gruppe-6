@@ -11,9 +11,6 @@ img {
 /*TYPOGRAFI*/
 
 p,
-h1,
-h2,
-h3,
 h4,
 a {
     font-family: sans-serif;
@@ -21,6 +18,29 @@ a {
 
 p {
     font-size: 1.3rem;
+}
+
+h1 {
+    font-family: futura-pt-bold, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 3rem;
+    margin: 0.5vw;
+}
+
+h2 {
+    font-family: futura-pt, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 2rem;
+    margin: 0.5vw;
+}
+
+h3 {
+    font-family: futura-pt, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    margin: 0.5vw;
 }
 
 #kontakt_site #sectionwrapper.kontakt h1 {
