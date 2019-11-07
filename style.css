@@ -85,10 +85,11 @@
 
  /*---------------------- STYLING AF FOOTER --------------------*/
  /*grid i footer*/
- footer {
+ .footer {
      background-color: #233740;
      padding: 30px;
 
+     display: grid;
      grid-gap: 30px;
      grid-template-areas:
          "kontakt"
