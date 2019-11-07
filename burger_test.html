@@ -7,6 +7,8 @@
     <title>Kogacenter Copenhagen - cykler</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/yzd5lae.css">
+    <link rel="stylesheet" href="https://use.typekit.net/yzd5lae.css">
 
     <style>
         body,
@@ -90,6 +92,14 @@
             .model {
                 width: 80vw;
             }
+
+            html #burger {
+                height: 60vw;
+            }
+
+            html #burger a {
+                font-size: 0.65em;
+            }
         }
 
         @media screen and (max-width:1050px) {
@@ -125,9 +135,6 @@
                 font-size: 2em;
             }
 
-            html p {
-                font-size: 0.8em;
-            }
 
             html header h1 {
                 padding-top: 13vw;
@@ -142,9 +149,7 @@
 
 
 
-        p {
-            font-size: 1rem;
-        }
+
 
         img {
             width: 100%;
@@ -347,10 +352,8 @@
         }
 
         #burger {
-            height: 150vw;
+            height: 45vw;
             background-color: rgba(35, 55, 64, 0.93);
-            width: 40vw;
-            padding: 50px;
             padding-bottom: 0;
             margin-bottom: 0;
             position: fixed;
@@ -361,24 +364,25 @@
             color: white;
             text-decoration: none;
             /*            text-align: center;*/
-            font-size: 1;
-            font-family: 'Montserrat', sans-serif;
-
+            font-family: futura-pt, sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            font-size: 1.2rem;
 
         }
 
         #burgermenu {
             list-style: none;
+            width: 100vw;
+            padding: 0;
 
-        }
-
-        #burgermenu li {
-            background-color: antiquewhite;
-            margin-top: 2vw;
         }
 
         #burgermenu p {
-            margin: 1vw;
+            margin: 0.5vw;
+            padding: 2vw;
+            color: white;
+            padding-left: 8vw;
         }
 
         #menuknap {
@@ -393,7 +397,15 @@
 
         #menuknapluk {
             color: white;
+            padding: 5vw;
+            font-family: futura-pt-bold, sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            font-size: 1.5rem;
+            padding-bottom: 1vw;
+
         }
+
 
         @media only screen and (max-width:890px) {
             header {
@@ -439,12 +451,6 @@
                 opacity: 0;
             }
 
-        }
-
-
-        #menuknapluk {
-            height: 10vw;
-            width: 10vw;
         }
 
     </style>
