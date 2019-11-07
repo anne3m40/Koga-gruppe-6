@@ -1,3 +1,203 @@
+<<<<<<< HEAD
+ img {
+     width: 100%;
+ }
+
+ /*splash*/
+
+
+ /*-------------------------STYLING AF NAV-------------------------*/
+
+ /*styling af menubar*/
+ #menu_bar {
+     display: flex;
+     background-color: #233740;
+     height: 35px;
+
+ }
+
+ /*styling af logo billiede i menubar*/
+ a .menu_logo {
+     height: 35px;
+     width: 110px;
+ }
+
+ /*styling af dropdown wrapper*/
+ .dropdown_wrapper {
+     background-color: #233740;
+     margin: 0px;
+     display: flex;
+ }
+
+ /*Styler knapperne til drop down*/
+ .dropdown_knap {
+     background-color: #233740;
+     color: white;
+     padding: 10px;
+     font-size: 0.8rem;
+     border: none;
+ }
+
+ /* Skjuler dropdown content, når man ikke hover og styler den*/
+ .dropdown_content {
+     display: none;
+     position: absolute;
+     background-color: #f1f1f1;
+     min-width: 160px;
+     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+     z-index: 1;
+ }
+
+ /* Styler links i dropdown felterne */
+ .dropdown_content a {
+     color: black;
+     padding: 12px 16px;
+     text-decoration: none;
+     display: block;
+     font-family: sans-serif;
+     font-size: 0.8rem;
+ }
+
+ /*styler knappen, hvor der ikke er dropdown på*/
+ .dropdown_knap a {
+     color: white;
+     text-decoration: none;
+ }
+
+ /* Vis dropdown content, når man hover på knappen */
+ .dropdown_om-os:hover .dropdown_content,
+ .dropdown_cykler:hover .dropdown_content {
+     display: block;
+ }
+
+ /* Skifter farve på dropdown content, når man holder musen over */
+ .dropdown_content a:hover {
+     background-color: #ddd;
+ }
+
+ /* Skifter farve på dropdown knapperne, når man hover og skifter cursor, så man kan se at det kan klikkes på */
+ .dropdown_om-os:hover .dropdown_knap:hover,
+ .dropdown_cykler .dropdown_knap:hover,
+ .dropdown_kontakt .dropdown_knap:hover {
+     background-color: #B11611;
+     cursor: pointer;
+ }
+
+ /*--------------------- STYLING AF NAV SLUT--------------------*/
+
+ /*---------------------- STYLING AF FOOTER --------------------*/
+ /*grid i footer*/
+ .footer {
+     background-color: #233740;
+     padding: 30px;
+
+     display: grid;
+     grid-gap: 30px;
+     grid-template-areas:
+         "kontakt"
+         "adresse"
+         "aabningstider"
+         "some";
+     grid-template-rows: auto;
+ }
+
+ .footer .kontakt {
+     grid-area: kontakt;
+ }
+
+ .footer .adresse {
+     grid-area: adresse;
+ }
+
+ .footer .aabningstider {
+     grid-area: aabningstider;
+ }
+
+ .footer .some {
+     grid-area: some;
+ }
+
+ /*grid i footer slut*/
+
+ /*footer generelt*/
+ .footer img {
+     height: 30px;
+ }
+
+ .footer p,
+ .footer h3,
+ .footer a {
+     color: white;
+     font-size: 0.8rem;
+     font-family: sans-serif;
+ }
+
+ .footer .some {
+     display: flex;
+ }
+
+ .footer .facebook,
+ .footer .youtube {
+     padding-right: 40px;
+ }
+
+ /*footer generelt slut*/
+ /*------------------- STYLING AF FOOTER SLUT ------------------*/
+
+
+
+ /*min kogaoplevelse*/
+
+
+ /*--------------------- STYLING AF KONTAKT --------------------*/
+
+ /*generelt - skal måske sammenlægges med de andre*/
+ #sectionwrapper.kontakt p,
+ #sectionwrapper.kontakt h1,
+ #sectionwrapper.kontakt h2,
+ #sectionwrapper.kontakt h3 #sectionwrapper.kontakt a {
+     font-family: sans-serif;
+ }
+
+ #sectionwrapper.kontakt h1 {
+     font-size: 1.8rem;
+ }
+
+ /*generelt slut*/
+
+ #kontakt_info img {
+     max-width: 100vw;
+ }
+
+ #kontakt_info figure {
+     margin: 0px;
+ }
+
+ #kontakt_formular {
+     background-color: #E1E6E8;
+ }
+
+ #kontakt_info .right,
+ #kontakt_formular {
+     padding-left: 30px;
+     padding-right: 30px;
+     padding-top: 30px;
+     margin: 0;
+ }
+
+ /*formular styling*/
+ .formular input,
+ .formular textarea {
+     margin: 5px;
+     width: 70vw;
+     max-width: 500px;
+     padding: 8px;
+     border-style: solid;
+     border-color: rgba(128, 128, 128, 0.25);
+     border-radius: 4px;
+     border-width: 4px;
+ }
+=======
 /* ----- G E N E R A L T ----- */
 
 body {
@@ -422,6 +622,7 @@ singleview_site article {
 
 /* ------------- 450 ------------- */
 @media screen and (min-width: 450px) {
+>>>>>>> origin/master
 
     /*grid footer*/
     .footer {
