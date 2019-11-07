@@ -84,6 +84,154 @@ a .menu_logo {
 
 /*--------------------- STYLING AF NAV SLUT--------------------*/
 
+
+/*--------------------- STYLING AF BURGER--------------------*/
+
+/*        Burgermenu starter her*/
+.hidden {
+    transform: scale(0);
+    display: none;
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+#burger {
+    background-color: rgba(35, 55, 64, 0.93);
+    padding-bottom: 0;
+    margin-bottom: 0;
+    position: fixed;
+    z-index: 100;
+}
+
+#burgermenu a {
+    color: white;
+    text-decoration: none;
+    /*            text-align: center;*/
+    font-family: futura-pt, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1.2rem;
+
+}
+
+#burgermenu {
+    list-style: none;
+    width: 100vw;
+    padding: 0;
+
+}
+
+#burgermenu p {
+    margin: 0.5vw;
+    padding: 2vw;
+    color: white;
+    padding-left: 8vw;
+}
+
+#menuknap {
+    height: 50px;
+    width: 50px;
+    border: none;
+    margin-left: 5vw;
+    margin-top: 2vw;
+    color: whitesmoke;
+    padding-top: 1.2vw;
+}
+
+#menuknapluk {
+    color: white;
+    padding: 5vw;
+    font-family: futura-pt-bold, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1.5rem;
+    padding-bottom: 1vw;
+
+}
+
+
+@media only screen and (max-width:727px) {
+    header {
+        width: 100%;
+    }
+
+    #menu {
+        transform: scale(0);
+        display: none;
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    #cykler_site nav {
+        transform: scale(0);
+        display: none;
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    #service_site #menu_bar {
+        transform: scale(0);
+        display: none;
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    #kogaoplevelse_site nav,
+    #kontakt_site nav {
+        transform: scale(0);
+        display: none;
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    #index_site nav {
+        transform: scale(0);
+        display: none;
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    #index_site #menuknap,
+    #kontakt_site #menuknap {
+        color: black;
+    }
+
+    #splash {
+        height: 35vw;
+    }
+
+    #knapper {
+        position: absolute;
+    }
+
+    .knapse p {
+        padding: 0;
+    }
+
+    knapsesprite {
+        top: -2vw;
+    }
+}
+
+@media only screen and (min-width:727px) {
+    #menuknap {
+        transform: scale(0);
+        display: none;
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    #burger {
+        transform: scale(0);
+        display: none;
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+}
+
+
+
 /*---------------------- STYLING AF FOOTER --------------------*/
 /*grid i footer*/
 .footer {
