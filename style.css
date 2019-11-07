@@ -217,7 +217,7 @@ a {
 }
 
 p {
-    font-size: 1.3rem;
+    font-size: 1rem;
 }
 
 h1 {
@@ -254,6 +254,7 @@ h3 {
     display: flex;
     background-color: #E1E6E8;
     height: 60px;
+    position: sticky;
 }
 
 /*styling af logo billiede i menubar*/
