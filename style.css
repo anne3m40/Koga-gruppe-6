@@ -54,6 +54,7 @@ h3 {
     display: flex;
     background-color: #E1E6E8;
     height: 60px;
+    position: sticky;
 }
 
 /*styling af logo billiede i menubar*/
