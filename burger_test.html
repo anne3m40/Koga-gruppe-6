@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kogacenter Copenhagen - cykler</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
+    <style>
+        body,
+        html {
+            margin: 0;
+            height: 100%;
+        }
+
+        #kategorier {
+            grid-area: kate;
+            background-color: #233740;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        @media screen and (max-width:727px) {
+
+            .filterknapper {
+                font-size: 0.7em;
+            }
+
+            .sorter {
+                font-size: 0.5em;
+                padding: none;
+                margin: 0;
+            }
+
+            .cykler {
+                font-size: 2em;
+                padding-top: 13vw;
+                font-family: 'Montserrat', sans-serif;
+            }
+        }
+
+        @media screen and (max-width:607px) {
+
+            .filterknapper {
+                font-size: 0.49em;
+                padding: none;
+                margin: 0;
+            }
+
+            .sorter {
+                font-size: 0.39em;
+                padding: none;
+                margin: 0;
+            }
+
+            .cykler {
+                font-size: 2em;
+                padding-top: 13vw;
+                font-family: 'Montserrat', sans-serif;
+            }
+        }
+
+        @media screen and (max-width:321px) {
+
+            .filterknapper {
+                font-size: 0.02em;
+                margin-bottom: 5vw;
+            }
+
+            .sorter {
+                font-size: 0.01em;
+                padding-bottom: 5vw;
+            }
+
+            #kategorier {
+                flex-direction: column;
+                height: 10vw;
+            }
+
+            .cykler {
+                margin-top: 0;
+                padding-top: 0;
+                font-size: 1.5em;
+                font-family: 'Montserrat', sans-serif;
+            }
+
+            .model {
+                width: 80vw;
+            }
+        }
+
+        @media screen and (max-width:1050px) {
+
+            #signatur {
+                flex-direction: column;
+            }
+
+            #signatur p {
+                padding-right: 5vw;
+            }
+
+            html header h1 {
+                padding-top: 13vw;
+                font-size: 2em;
+                font-family: 'Montserrat', sans-serif;
+            }
+        }
+
+        @media screen and (max-width:650px) {
+            html #signatur {
+                padding: 45px;
+            }
+
+            html #signatur p {
+                margin: 0;
+                padding-right: 0;
+                padding-bottom: 15px;
+                font-size: 0.8em;
+            }
+
+            html #signatur h1 {
+                font-size: 2em;
+            }
+
+            html p {
+                font-size: 0.8em;
+            }
+
+            html header h1 {
+                padding-top: 13vw;
+                font-size: 2em;
+                font-family: 'Montserrat', sans-serif;
+            }
+
+            #signatur img {
+                margin-top: 5vw;
+            }
+        }
+
+
+
+        p {
+            font-size: 1rem;
+        }
+
+        img {
+            width: 100%;
+        }
+
+
+        .splash_video {
+            grid-area: splash;
+            background-color: aquamarine;
+            width: 100%;
+            max-width: none;
+            background-size: cover;
+            text-align: center;
+        }
+
+        footer {
+            grid-area: footer;
+            background-color: #233740;
+            padding: 20px;
+        }
+
+        #modeller {
+            width: 80vw;
+            margin: 2vw auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-gap: 1em;
+        }
+
+        .indhold {
+            background-color: #FFFFFF;
+            grid-area: indhold;
+            padding: 20px;
+        }
+
+        #modeller h1 {
+            text-decoration: underline;
+        }
+
+        .model {
+            border-style: solid;
+            background-color: white;
+        }
+
+        #container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-areas:
+                "menu menu menu menu"
+                "splash splash splash splash"
+                "kate kate kate kate"
+                "indhold indhold indhold indhold"
+                "signatur signatur signatur signatur"
+                "footer footer footer footer"
+        }
+
+        /*        menu*/
+
+        #menu {
+            display: flex;
+            grid-area: menu;
+            background-color: #E4E4E4;
+            color: black;
+        }
+
+        .dropdown_menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        #menu_bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #kate {
+            display: flex;
+
+        }
+
+        button {
+            font-size: 0.9rem;
+        }
+
+        .dropdown_knap {
+            background-color: #E4E4E4;
+            color: black;
+        }
+
+        .splash_billede {
+            height: 40vw;
+            width: 100vw;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-image: url(img/cykler_splash.png);
+            color: white;
+        }
+
+        .filterknapper {
+            font-family: 'Montserrat', sans-serif;
+            color: white;
+            background-color: #233740;
+            border: none;
+            height: 7vw;
+            width: 15vw;
+        }
+
+        .filterknapper:hover {
+            background-color: #F0F0F0;
+            color: black;
+        }
+
+        .sorter {
+            font-family: 'Montserrat', sans-serif;
+            color: white;
+            background-color: #233740;
+            border: none;
+            width: 15vw;
+            margin-top: 2vw;
+            padding-left: 5vw;
+
+        }
+
+        header h1 {
+            padding-top: 22vw;
+            font-family: 'Montserrat', sans-serif;
+            padding-left: 10vw;
+            font-size: 3.5rem;
+        }
+
+        article.model {
+            border: none;
+        }
+
+        h2,
+        .pris {
+            background-color: #F0F0F0;
+            padding: 17px;
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .model h2 {
+            font-size: 1em;
+        }
+
+        .pris_container {
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: row;
+            background-color: #F0F0F0;
+            padding-left: 2vw;
+        }
+
+        #signatur {
+            display: flex;
+            grid-area: signatur;
+            font-family: 'Montserrat', sans-serif;
+            padding: 105px;
+            background-color: #E1E6E8;
+            padding-top: 25px;
+        }
+
+        #signatur h1 {
+            font-size: 3em;
+        }
+
+
+
+        #signatur img {
+            height: 25vw;
+            width: auto;
+            padding-top: 3.5vw;
+        }
+
+        .koga_com {
+            border: none;
+            background-color: #233740;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8em;
+            padding: 10px;
+            margin-top: 1vw;
+        }
+
+        #signatur p {
+            margin-right: 5vw;
+        }
+
+        /*    Burger */
+
+        .hidden {
+            transform: scale(0);
+            display: none;
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+
+        #burger {
+            height: 150vw;
+            background-color: rgba(35, 55, 64, 0.93);
+            width: 40vw;
+            padding: 50px;
+            padding-bottom: 0;
+            margin-bottom: 0;
+            position: fixed;
+            z-index: 100;
+        }
+
+        #burgermenu a {
+            color: white;
+            text-decoration: none;
+            /*            text-align: center;*/
+            font-size: 1;
+            font-family: 'Montserrat', sans-serif;
+
+
+        }
+
+        #burgermenu {
+            list-style: none;
+
+        }
+
+        #burgermenu li {
+            background-color: antiquewhite;
+            margin-top: 2vw;
+        }
+
+        #burgermenu p {
+            margin: 1vw;
+        }
+
+        #menuknap {
+            height: 50px;
+            width: 50px;
+            border: none;
+            margin-left: 5vw;
+            margin-top: 2vw;
+            color: whitesmoke;
+            padding-top: 1.2vw;
+        }
+
+        #menuknapluk {
+            color: white;
+        }
+
+        @media only screen and (max-width:890px) {
+            header {
+                width: 100%;
+            }
+
+            #menu {
+                transform: scale(0);
+                display: none;
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+            #splash {
+                height: 35vw;
+            }
+
+            #knapper {
+                position: absolute;
+            }
+
+            .knapse p {
+                padding: 0;
+            }
+
+            knapsesprite {
+                top: -2vw;
+            }
+        }
+
+        @media only screen and (min-width:890px) {
+            #menuknap {
+                transform: scale(0);
+                display: none;
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+            #burger {
+                transform: scale(0);
+                display: none;
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+        }
+
+
+        #menuknapluk {
+            height: 10vw;
+            width: 10vw;
+        }
+
+    </style>
+</head>
+
+<body>
+    <section id="container">
+        <nav id="menu">
+        </nav>
+
+        <header class="splash_billede">
+            <div id="menuknap">☰</div>
+            <h1 class="cykler">Cykler</h1>
+        </header>
+
+        <div id="burger" class="hidden">
+            <div id="menuknapluk">X</div>
+
+            <ul id="burgermenu">
+                <li><a href="service.html">
+                        <p>Om os</p>
+                    </a></li>
+                <li><a href="cykler.html">
+                        <p>Cykler</p>
+                    </a></li>
+                <li><a href="kontakt.html">
+                        <p>Kontakt</p>
+                    </a></li>
+            </ul>
+        </div>
+
+        <div id="kategorier">
+            <h1></h1>
+            <p class="sorter">sorter efter:</p>
+            <nav class="kate">
+
+                <!-- data-model er en data attribut som vi har givet navnet model -->
+
+                <button class="filterknapper" data-kategori="Alle">Alle modeller</button>
+                <button class="filterknapper" data-kategori="City">By-cykler</button>
+                <button class="filterknapper" data-kategori="Trekking">Trekking</button>
+                <button class="filterknapper" data-kategori="Racer">Racer-cykler</button>
+                <button class="filterknapper" data-kategori="Ebike">El-cykler</button>
+
+            </nav>
+        </div>
+
+        <div class="indhold">
+
+            <main>
+                <section id="modeller">
+
+
+                </section>
+            </main>
+        </div>
+
+
+
+
+
+        <div id="signatur">
+            <div class="signatur_tekst">
+                <h1>Signatur cykler</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit incidunt veniam fugiat magni nostrum, tenetur vero ullam, repudiandae quibusdam doloribus assumenda delectus perspiciatis aspernatur, provident debitis saepe corrupti asperiores sunt.</p>
+                <button class="koga_com">Læs mere på Koga.com</button>
+            </div>
+            <div class="signatur_billede">
+                <img src="img/Sk%C3%A6rmbillede%202019-11-03%20kl.%2023.36.07.png" alt="signaturcykel">
+            </div>
+
+        </div>
+
+        <footer>
+        </footer>
+
+    </section>
+
+    <template>
+        <article class="model">
+
+            <p class="kategori"></p>
+            <figure>
+                <img class="cykel" src="" alt="">
+            </figure>
+            <h2></h2>
+            <div class="pris_container">
+                <p>pris:</p>
+                <p class="pris"></p>
+            </div>
+        </article>
+    </template>
+
+
+
+    <!--    script -->
+    <script src="script.js"></script>
+    <script>
+        let indhold;
+        let filter = "Alle";
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            hentJson();
+            const filterKnapper = document.querySelectorAll(".filterknapper");
+            filterKnapper.forEach(knap => knap.addEventListener("click", filtrerCykler));
+            document.querySelector("#menuknap").addEventListener("click", toggleMenu);
+            document.querySelector("#menuknapluk").addEventListener("click", toggleMenu);
+
+        }
+
+        function toggleMenu() {
+            console.log("toggleMenu");
+
+            //            Burgermenuen er skjult på forsiden
+            document.querySelector("#burger").classList.toggle("hidden");
+
+            //            Hvis containerforside er synlig skal den skjules. Hvis den er skjult skal den vises
+            if (document.querySelector("#containerforside")) {
+                document.querySelector("#containerforside").classList.toggle("hidden");
+            }
+
+            //            Hvis menuknappen er synlig skal den skjules. Hvis den er skjult skal den vises
+            if (document.querySelector("#menuknap")) {
+                document.querySelector("#menuknap").classList.toggle("hidden");
+            }
+
+            //            Hvis splashen er synlig skal den skjules. Hvis den er skjult skal den vises
+            if (document.querySelector(".splash")) {
+                document.querySelector(".splash").classList.toggle("hidden");
+            }
+
+        }
+
+
+
+        //Sæt filter via kategori
+        function filtrerCykler() {
+            filter = this.dataset.kategori;
+            console.log(filter);
+            visIndhold();
+        }
+        //hent JSON fil i asynkron function
+        async function hentJson() {
+            const url = "http://annesofienielsen.dk/kea/09-cms/koga/wordpress/wp-json/wp/v2/cykler/?per_page=100";
+
+            //henter data filen
+            const myJson = await fetch(url);
+            //den hentee ata skal tolkes som json
+            indhold = await myJson.json();
+            //kald funktion der viser data som json
+            visIndhold();
+        }
+        //da kategorier kommer ud som et array, er vi nødt til at putte vores loop ind i en if-sætning
+        function visIndhold() {
+            const liste = document.querySelector("#modeller");
+            liste.textContent = "";
+
+            indhold.forEach((enkelt) => {
+                enkelt.kategori.forEach(k => {
+                    if (k == filter || filter == "Alle") {
+                        console.log("jhgkjhk", k, filter);
+                        const klon = document.querySelector("template").cloneNode(true).content;
+                        klon.querySelector("h2").textContent = enkelt.model;
+                        klon.querySelector(".pris").innerHTML = enkelt.pris;
+                        //                        klon.querySelector(".kategori").innerHTML = enkelt.kategori;
+                        klon.querySelector(".cykel").src = enkelt.foto_cykel.guid;
+                        liste.appendChild(klon);
+                    }
+                });
+
+            });
+
+
+            //            document.querySelector(".overskrift").innerHTML = indhold.title.rendered;
+            //            document.querySelector(".indhold").innerHTML = indhold.content.rendered;
+        }
+
+    </script>
+</body>
+
+</html>
