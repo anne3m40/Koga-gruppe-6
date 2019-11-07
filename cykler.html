@@ -19,60 +19,10 @@
             grid-area: kate;
             background-color: #233740;
             display: flex;
-            flex-wrap: wrap;
             justify-content: space-around;
         }
 
-        @media screen and (max-width:727px) {
-
-            .filterknapper {
-                font-size: 0.7em;
-            }
-        }
-
-        @media screen and (max-width:727px) {
-
-            .sorter {
-                font-size: 0.5em;
-                padding: none;
-                margin: 0;
-            }
-        }
-
-        @media screen and (max-width:607px) {
-
-            .filterknapper {
-                font-size: 0.49em;
-                padding: none;
-                margin: 0;
-            }
-        }
-
-        @media screen and (max-width:607px) {
-
-            .sorter {
-                font-size: 0.39em;
-                padding: none;
-                margin: 0;
-            }
-        }
-
         @media screen and (max-width:321px) {
-
-            .filterknapper {
-                font-size: 0.02em;
-                margin-bottom: 5vw;
-            }
-
-            .sorter {
-                font-size: 0.01em;
-                padding-bottom: 5vw;
-            }
-
-            #kategorier {
-                flex-direction: column;
-                height: 10vw;
-            }
 
             .cykler {
                 font-size: 1em;
@@ -210,9 +160,9 @@
             align-items: center;
         }
 
-        #kate {
+        .kate {
             display: flex;
-
+            flex-wrap: wrap;
         }
 
         button {
@@ -322,10 +272,55 @@
         #signatur p {
             margin-right: 5vw;
         }
+
+        /*NYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYT OBS NYE CLASSES PÅ KNAPPER - SE HTML*/
+        @media screen and (max-width:727px) {
+
+            /*-------------sortering på cykle siden--------------*/
+            /*generel styling af sortering*/
+            #kategorier,
+            .sorter {
+                background-color: white;
+                color: #233740;
+            }
+
+            /*generel styling af sortering slut*/
+
+            /*styling af drop down knap*/
+            .filterknapper {
+                width: 200px;
+            }
+
+            /*drop down button slut*/
+
+            /*skjuler dropdown content*/
+            .sortering_dropdown {
+                display: none;
+                position: absolute;
+
+            }
+
+            /*skjuler dropdown content slut*/
+
+            /*Viser dropdown content ved hover på alle modeller*/
+            .kate:hover .sortering_dropdown {
+                display: flex;
+                flex-direction: column;
+            }
+
+            /*styling af droopdown content slut*/
+
+            /*-------------sortering på cykle siden slut--------------*/
+
+
+        }
+
+        /*NYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYT SLUT*/
+
     </style>
 </head>
 
-<body id="cykel_site">
+<body id="cykler_site">
     <section id="container">
         <nav id="menu">
 
@@ -336,17 +331,21 @@
         <div id="kategorier">
             <h1></h1>
             <p class="sorter">sorter efter:</p>
-            <nav class="kate">
+            <div class="kate">
 
                 <!-- data-model er en data attribut som vi har givet navnet model -->
+                <div>
+                    <button id="alle" class="filterknapper" data-kategori="Alle">Alle modeller</button>
+                </div>
+                <!-- OBS NY DIV!!!!--->
+                <div class="sortering_dropdown">
+                    <button id="by" class="filterknapper" data-kategori="City">By-cykler</button>
+                    <button id="trek" class="filterknapper" data-kategori="Trekking">Trekking</button>
+                    <button class="filterknapper" data-kategori="Racer">Racer-cykler</button>
+                    <button id="e" class="filterknapper" data-kategori="Ebike">El-cykler</button>
+                </div>
 
-                <button class="filterknapper" data-kategori="Alle">Alle modeller</button>
-                <button class="filterknapper" data-kategori="City">By-cykler</button>
-                <button class="filterknapper" data-kategori="Trekking">Trekking</button>
-                <button class="filterknapper" data-kategori="Racer">Racer-cykler</button>
-                <button class="filterknapper" data-kategori="Ebike">El-cykler</button>
-
-            </nav>
+            </div>
         </div>
         <div class="indhold">
 
@@ -398,58 +397,7 @@
 
     <!--    script -->
     <script src="script.js"></script>
-    <script>
-        let indhold;
-        let filter = "Alle";
-        document.addEventListener("DOMContentLoaded", start);
 
-        function start() {
-            hentJson();
-            const filterKnapper = document.querySelectorAll(".filterknapper");
-            filterKnapper.forEach(knap => knap.addEventListener("click", filtrerCykler));
+</body>
 
-        }
-
-        //Sæt filter via kategori
-        function filtrerCykler() {
-            filter = this.dataset.kategori;
-            console.log(filter);
-            visIndhold();
-        }
-        //hent JSON fil i asynkron function
-        async function hentJson() {
-            const url = "http://annesofienielsen.dk/kea/09-cms/koga/wordpress/wp-json/wp/v2/cykler/?per_page=100";
-
-            //henter data filen
-            const myJson = await fetch(url);
-            //den hentee ata skal tolkes som json
-            indhold = await myJson.json();
-            //kald funktion der viser data som json
-            visIndhold();
-        }
-        //da kategorier kommer ud som et array, er vi nødt til at putte vores loop ind i en if-sætning
-        function visIndhold() {
-            const liste = document.querySelector("#modeller");
-            liste.textContent = "";
-
-            indhold.forEach((enkelt) => {
-                enkelt.kategori.forEach(k => {
-                    if (k == filter || filter == "Alle") {
-                        console.log("jhgkjhk", k, filter);
-                        const klon = document.querySelector("template").cloneNode(true).content;
-                        klon.querySelector("h2").textContent = enkelt.model;
-                        klon.querySelector(".pris").innerHTML = enkelt.pris;
-                        //                        klon.querySelector(".kategori").innerHTML = enkelt.kategori;
-                        klon.querySelector(".cykel").src = enkelt.foto_cykel.guid;
-                        liste.appendChild(klon);
-                    }
-                });
-
-            });
-
-
-            //            document.querySelector(".overskrift").innerHTML = indhold.title.rendered;
-            //            document.querySelector(".indhold").innerHTML = indhold.content.rendered;
-        }
-    </script>
-</body></html>
+</html>
