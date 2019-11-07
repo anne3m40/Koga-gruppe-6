@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kogacenter Copenhagen - cykler</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 
     <style>
         body,
@@ -16,17 +17,121 @@
 
         #kategorier {
             grid-area: kate;
-            background-color: red;
+            background-color: #233740;
             display: flex;
-            justify-content: center;
-            align-items: center;
+            flex-wrap: wrap;
+            justify-content: space-around;
         }
+
+        @media screen and (max-width:727px) {
+
+            .filterknapper {
+                font-size: 0.7em;
+            }
+        }
+
+        @media screen and (max-width:727px) {
+
+            .sorter {
+                font-size: 0.5em;
+                padding: none;
+                margin: 0;
+            }
+        }
+
+        @media screen and (max-width:607px) {
+
+            .filterknapper {
+                font-size: 0.49em;
+                padding: none;
+                margin: 0;
+            }
+        }
+
+        @media screen and (max-width:607px) {
+
+            .sorter {
+                font-size: 0.39em;
+                padding: none;
+                margin: 0;
+            }
+        }
+
+        @media screen and (max-width:321px) {
+
+            .filterknapper {
+                font-size: 0.02em;
+                margin-bottom: 5vw;
+            }
+
+            .sorter {
+                font-size: 0.01em;
+                padding-bottom: 5vw;
+            }
+
+            #kategorier {
+                flex-direction: column;
+                height: 10vw;
+            }
+
+            .cykler {
+                font-size: 1em;
+                font-family: 'Montserrat', sans-serif;
+            }
+
+            main #modeller {}
+
+            .model {
+                width: 80vw;
+            }
+        }
+
+        @media screen and (max-width:1050px) {
+
+            #signatur {
+                flex-direction: column;
+            }
+
+            #signatur p {
+                padding-right: 5vw;
+            }
+        }
+
+        @media screen and (max-width:650px) {
+            html #signatur {
+                padding: 45px;
+            }
+
+            html #signatur p {
+                margin: 0;
+                padding-right: 0;
+                padding-bottom: 15px;
+                font-size: 0.8em;
+            }
+
+            html #signatur h1 {
+                font-size: 2em;
+            }
+
+            html p {
+                font-size: 0.8em;
+            }
+
+            html header h1 {
+                font-size: 1.5em;
+                font-family: 'Montserrat', sans-serif;
+            }
+
+            #signatur img {
+                margin-top: 5vw;
+            }
+        }
+
+
 
         p {
             font-size: 1rem;
         }
-
-        a {}
 
         img {
             width: 100%;
@@ -44,7 +149,7 @@
 
         footer {
             grid-area: footer;
-            background-color: pink;
+            background-color: #233740;
             padding: 20px;
         }
 
@@ -57,7 +162,7 @@
         }
 
         .indhold {
-            background-color: skyblue;
+            background-color: #FFFFFF;
             grid-area: indhold;
             padding: 20px;
         }
@@ -79,6 +184,7 @@
                 "splash splash splash splash"
                 "kate kate kate kate"
                 "indhold indhold indhold indhold"
+                "signatur signatur signatur signatur"
                 "footer footer footer footer"
         }
 
@@ -87,6 +193,8 @@
         #menu {
             display: flex;
             grid-area: menu;
+            background-color: #E4E4E4;
+            color: black;
         }
 
         .dropdown_menu {
@@ -104,12 +212,116 @@
 
         #kate {
             display: flex;
+
         }
 
         button {
-            font-size: 1rem;
+            font-size: 0.9rem;
         }
 
+        .dropdown_knap {
+            background-color: #E4E4E4;
+            color: black;
+        }
+
+        .splash_billede {
+            height: 40vw;
+            width: 100vw;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-image: url(img/cykler_splash.png);
+            color: white;
+        }
+
+        .filterknapper {
+            font-family: 'Montserrat', sans-serif;
+            color: white;
+            background-color: #233740;
+            border: none;
+            height: 7vw;
+            width: 15vw;
+        }
+
+        .filterknapper:hover {
+            background-color: #F0F0F0;
+            color: black;
+        }
+
+        .sorter {
+            font-family: 'Montserrat', sans-serif;
+            color: white;
+            background-color: #233740;
+            border: none;
+            width: 15vw;
+            margin-top: 2vw;
+            padding-left: 5vw;
+
+        }
+
+        header h1 {
+            padding-top: 20vw;
+            padding-left: 10vw;
+            font-size: 3.5rem;
+        }
+
+        article.model {
+            border: none;
+        }
+
+        h2,
+        .pris {
+            background-color: #F0F0F0;
+            padding: 17px;
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .model h2 {
+            font-size: 1em;
+        }
+
+        .pris_container {
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: row;
+            background-color: #F0F0F0;
+            padding-left: 2vw;
+        }
+
+        #signatur {
+            display: flex;
+            grid-area: signatur;
+            font-family: 'Montserrat', sans-serif;
+            padding: 105px;
+            background-color: #E1E6E8;
+            padding-top: 25px;
+        }
+
+        #signatur h1 {
+            font-size: 3em;
+        }
+
+
+
+        #signatur img {
+            height: 25vw;
+            width: auto;
+            padding-top: 3.5vw;
+        }
+
+        .koga_com {
+            border: none;
+            background-color: #233740;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8em;
+            padding: 10px;
+            margin-top: 1vw;
+        }
+
+        #signatur p {
+            margin-right: 5vw;
+        }
     </style>
 </head>
 
@@ -118,21 +330,24 @@
         <nav id="menu">
 
         </nav>
-        <header class="splash_video">
-            <h1>SPLASH</h1>
+        <header class="splash_billede">
+            <h1 class="cykler">Cykler</h1>
         </header>
         <div id="kategorier">
             <h1></h1>
+            <p class="sorter">sorter efter:</p>
             <nav class="kate">
+
                 <!-- data-model er en data attribut som vi har givet navnet model -->
-                <button class="filterknapper" data-kategori="Alle">Alle</button>
-                <button class="filterknapper" data-kategori="City">By cykler</button>
-                <button class="filterknapper" data-kategori="Trekking">Trekking cykler</button>
-                <button class="filterknapper" data-kategori="Racer">Racercykler</button>
+
+                <button class="filterknapper" data-kategori="Alle">Alle modeller</button>
+                <button class="filterknapper" data-kategori="City">By-cykler</button>
+                <button class="filterknapper" data-kategori="Trekking">Trekking</button>
+                <button class="filterknapper" data-kategori="Racer">Racer-cykler</button>
                 <button class="filterknapper" data-kategori="Ebike">El-cykler</button>
+
             </nav>
         </div>
-        <h2>Cykler</h2>
         <div class="indhold">
 
             <main>
@@ -143,6 +358,22 @@
             </main>
         </div>
 
+
+
+
+
+        <div id="signatur">
+            <div class="signatur_tekst">
+                <h1>Signatur cykler</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit incidunt veniam fugiat magni nostrum, tenetur vero ullam, repudiandae quibusdam doloribus assumenda delectus perspiciatis aspernatur, provident debitis saepe corrupti asperiores sunt.</p>
+                <button class="koga_com">Læs mere på Koga.com</button>
+            </div>
+            <div class="signatur_billede">
+                <img src="img/Sk%C3%A6rmbillede%202019-11-03%20kl.%2023.36.07.png" alt="signaturcykel">
+            </div>
+
+        </div>
+
         <footer>
         </footer>
 
@@ -150,14 +381,19 @@
 
     <template>
         <article class="model">
-            <h2></h2>
-            <p class="pris"></p>
+
             <p class="kategori"></p>
             <figure>
                 <img class="cykel" src="" alt="">
             </figure>
+            <h2></h2>
+            <div class="pris_container">
+                <p>pris:</p>
+                <p class="pris"></p>
+            </div>
         </article>
     </template>
+
 
 
     <!--    script -->
@@ -203,7 +439,7 @@
                         const klon = document.querySelector("template").cloneNode(true).content;
                         klon.querySelector("h2").textContent = enkelt.model;
                         klon.querySelector(".pris").innerHTML = enkelt.pris;
-                        klon.querySelector(".kategori").innerHTML = enkelt.kategori;
+                        //                        klon.querySelector(".kategori").innerHTML = enkelt.kategori;
                         klon.querySelector(".cykel").src = enkelt.foto_cykel.guid;
                         liste.appendChild(klon);
                     }
@@ -215,8 +451,5 @@
             //            document.querySelector(".overskrift").innerHTML = indhold.title.rendered;
             //            document.querySelector(".indhold").innerHTML = indhold.content.rendered;
         }
-
     </script>
-</body>
-
-</html>
+</body></html>
